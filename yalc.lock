@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "vizie-worx": {
+      "signature": "40e30def4d7b9ad73ed90e16dd2677b4",
+      "file": true,
+      "replaced": "0.0.4"
+    }
+  }
+}
