@@ -104,10 +104,10 @@ export default function Home() {
             <button className={styles.copy_btn} type='button' onClick={onCodeShow}>Copy Code</button>
           </div>
           <div className={styles.vizi_worx__hero}>
-            <div>Vizi Worx Vizi Worx</div>
-            <div>Vizi Worx Vizi Worx</div>
-            <div>Vizi Worx Vizi Worx</div>
-            <div>Vizi Worx Vizi Worx</div>
+            <div>Vizie Worx Vizie Worx</div>
+            <div>Vizie Worx Vizie Worx</div>
+            <div>Vizie Worx Vizie Worx</div>
+            <div>Vizie Worx Vizie Worx</div>
           </div>
         </div>
         <div className={styles.about__container}>
