@@ -108,6 +108,7 @@ export default function Home() {
             <div>Vizie Worx Vizie Worx</div>
             <div>Vizie Worx Vizie Worx</div>
             <div>Vizie Worx Vizie Worx</div>
+            <div>Vizie Worx Vizie Worx</div>
           </div>
         </div>
         <div className={styles.about__container}>
