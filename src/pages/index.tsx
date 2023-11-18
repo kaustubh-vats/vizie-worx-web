@@ -141,7 +141,7 @@ export default function Home() {
           <p>Example Usage</p>
           <pre>
             <code ref={codeDivRef} className={styles.code__container}>
-              {`import {VizieWorx} from 'vizie-wox'
+              {`import { VizieWorx } from 'vizie-wox'
 export default function VizieWorxWrapper() => {
   return (
     <VizieWorx />
@@ -152,7 +152,7 @@ export default function VizieWorxWrapper() => {
           <p>Observe on code change</p>
           <pre>
             <code ref={onCodeUpdateRef} className={styles.code__container}>
-              {`import {VizieWorx} from 'vizie-wox'
+              {`import { VizieWorx } from 'vizie-wox'
 import { useRef } from 'react';
 
 export default function VizieWorxWrapper() => {
