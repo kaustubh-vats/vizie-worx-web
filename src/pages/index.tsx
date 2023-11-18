@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '@/styles/Home.module.css'
 import { VizieWorx } from 'vizie-worx'
-import { use, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import hljs from 'highlight.js';
 import javascript from 'highlight.js/lib/languages/javascript';
 import bash from 'highlight.js/lib/languages/bash';
@@ -13,6 +13,7 @@ export default function Home() {
   const [success, setSuccess] = useState<string>('');
   const codeDivRef = useRef<HTMLDivElement>(null);
   const codeDivInstallRef = useRef<HTMLDivElement>(null);
+  const onCodeUpdateRef = useRef<HTMLDivElement>(null);
 
   useEffect(()=>{
     if(codeDivRef.current) {
@@ -23,7 +24,11 @@ export default function Home() {
       hljs.registerLanguage('bash', bash);
       hljs.highlightElement(codeDivInstallRef.current);
     }
-  }, [codeDivRef, codeDivInstallRef]);
+    if(onCodeUpdateRef.current){
+      hljs.registerLanguage('javascript', javascript);
+      hljs.highlightElement(onCodeUpdateRef.current);
+    }
+  }, [codeDivRef, codeDivInstallRef, onCodeUpdateRef]);
 
   const onCodeUpdate = (style: string, code: string) => {
     codeRef.current = "<style>" + style + "</style>\n" + code;
@@ -140,6 +145,29 @@ export default function Home() {
 export default function VizieWorxWrapper() => {
   return (
     <VizieWorx />
+  )
+}`}
+            </code>
+          </pre>
+          <p>Observe on code change</p>
+          <pre>
+            <code ref={onCodeUpdateRef} className={styles.code__container}>
+              {`import {VizieWorx} from 'vizie-wox'
+import { useRef } from 'react';
+
+export default function VizieWorxWrapper() => {
+  const styleRef = useRef();
+  const codeRef = useRef();
+  
+  const onCodeUpdate = (style, code) => {
+    styleRef.current = style;
+    codeRef.current = code;
+  }
+  
+  return (
+    <VizieWorx
+      onUpdateCode={onCodeUpdate}
+    />
   )
 }`}
             </code>
